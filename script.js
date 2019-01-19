@@ -16,7 +16,7 @@ document.getElementById("startreset").onclick = function(){
 
         show("time") // Show the timer.
         
-        timeremaining = 10;
+        timeremaining = 60;
 
         // Start countdown
         startCountdown();
@@ -57,6 +57,8 @@ function startCountdown(){
             hide("time");   // Hide time reamining 
 
             scorebox(); // Show gameover box and score
+
+            play = true;
         }
     }, 1000);
 }
@@ -68,6 +70,36 @@ function scorebox(){
     document.getElementById('gameover').innerHTML = "<p>Game Over</p><p>Your Score : " + score + " </p>"
     show("gameover");
 
+}
+var correctbox
+
+
+// Listen for the click on the answer
+for (let i = 1; i < 5; i++){
+    document.getElementById("box" + i).onclick = function(){
+
+        // If game is in play mode
+        if (play == false){
+            // If clicked is correct
+            if (i == correctbox){
+                    
+                score += 1; // Increase score
+                document.getElementById("score-value").innerHTML = score;
+                show("correct"); // Show correct
+                setTimeout(function(){
+                    hide("correct");
+                }, 1000);
+                getQuestions();
+            }
+            // If clicked is incorrect
+            else{
+                show("wrong");  // Show Try again
+                setTimeout(function () {
+                    hide("wrong");
+                }, 1000);
+            }
+        }
+    }
 }
 
 // Function to generate questions and handling to score all the main logic
@@ -84,7 +116,7 @@ function getQuestions(){
     var answers = [correct]
 
     // Generate random number b/w 0 and 5 
-    let correctbox = 1 + Math.floor(3 * Math.random());
+    correctbox = 1 + Math.floor(3 * Math.random());
 
     //show the question
     document.getElementById("question").innerHTML = x + " x " + y;
@@ -113,3 +145,4 @@ function getQuestions(){
     }
 
 }
+
