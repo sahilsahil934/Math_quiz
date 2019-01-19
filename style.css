@@ -1,0 +1,165 @@
+html{
+    background: radial-gradient(circle, #fff, #ccc);
+}
+
+#container{
+    background-color: skyblue;
+    width: 800px;
+    height: 580px;
+    position: relative;
+    margin: 160px 550px;   
+    box-shadow: 4px 4px #009de4;
+    padding: 20px 15px;   
+    border-radius: 15px;
+}
+
+#score{
+    background-color: lightgreen;
+    padding: 13px;
+    font-size: 20px;
+    position: absolute;
+    box-shadow: 0px 3px lightyellow;
+    left: 700px;  
+    top: 30px;
+}
+
+#correct{
+    background-color: green;
+    color: white;
+    padding: 13px;
+    position: absolute;
+    left: 350px;
+    top: 35px;
+    display: none;
+}
+
+#wrong{
+    background-color: red;
+    color: white;
+    padding: 13px;
+    position: absolute;
+    left: 350px;
+    top: 35px;
+    display: none;
+}
+
+#question{
+    background-color: lightblue;
+    height: 180px;
+    width: 600px;
+    margin: 100px auto 20px auto;
+    color: purple;
+    font-size: 140px;
+    font-family: cursive, sans-serif;
+    text-align: center;
+    box-shadow: 0px 4px #009de4;
+    line-height: 200px;
+    border-radius: 10px;
+}
+
+#instruction{
+    background-color: lightblue;
+    height: 70px;
+    width: 600px;
+    margin: 20px auto;
+    font-size: 30px;
+    color: grey;
+    line-height: 65px;
+    font-family: cursive, sans-serif;
+    text-align: center;
+    box-shadow: 0px 4px #009de4;
+    border-radius: 10px;
+
+}
+
+#options{
+    height: 120px;
+    width: 600px;
+    margin: 0px 102px ;
+}
+.box{
+    background-color: white;
+    color: rgb(51, 117, 143);
+    float: left;
+    border-radius: 10px;
+    height: 120px;
+    width: 133px;
+    box-shadow: 0px 4px #009de4;
+    margin-right: 20px;
+    text-align: center;
+    line-height: 110px;
+    font-size: 20px;
+    cursor: pointer;
+    position: relative;
+    transform: all 0.3s;
+}
+  
+#box4{
+    margin-right: 0px;
+}
+
+.box:hover, #startreset:hover{
+    background-color: purple;
+    box-shadow: 0px 4px #009de4;
+    color: white;
+}
+
+.box:active, #startreset:active{
+    box-shadow: 0px 0px #009de4;
+    top: 4px;
+}
+
+#startreset{
+    background-color: lightblue;
+    color: rgb(228, 8, 45);
+    float: left;
+    border-radius: 5px;
+    height: 50px;
+    width: 150px;
+    box-shadow: 0px 4px #009de4;
+    margin: 25px;
+    left: 300px;
+    text-align: center;
+    line-height: 55px;
+    font-size: 20px;
+    cursor: pointer;
+    position: relative;
+    transform: all 0.3s;
+}
+
+#time{
+    background-color: rgb(190, 218, 171);
+    color: rgb(33, 65, 172);
+    float: left;
+    border-radius: 5px;
+    height: 50px;
+    width: 280px;
+    box-shadow: 0px 4px #009de4;
+    margin: 25px;
+    left: 300px;
+    text-align: center;
+    line-height: 55px;
+    font-size: 17px;
+    cursor: pointer;
+    position: relative;
+    transform: all 0.3s;  
+    visibility: hidden;
+    display: none;
+}
+
+#gameover{
+    height: 300px;
+    width: 700px;
+    background: linear-gradient(rgb(148, 236, 148), rgb(190, 100, 100));
+    font-size: 60px;
+    font-family: cursive, sans-serif;
+    padding: 5px;
+    top: 150px;
+    left: 58px;
+    color: white;
+    position: absolute; 
+    text-align: center;
+    text-transform: uppercase;
+    border: ridge skyblue; 
+    display: none;
+}
