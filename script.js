@@ -11,11 +11,11 @@ document.getElementById("startreset").onclick = function(){
     }
     else{
         play = false; // set it false so on reset page reloads
-    
+
         document.getElementById("startreset").innerHTML = "Reset Game"; // Change start game to reset game
 
         show("time") // Show the timer.
-        
+
         timeremaining = 60;
 
         // Start countdown
@@ -31,7 +31,7 @@ document.getElementById("startreset").onclick = function(){
 
 // Function to change display property to block.
 function show(Id){
-    document.getElementById(Id).style.display = "block"; 
+    document.getElementById(Id).style.display = "block";
 }
 
 // Function to change display property to none.
@@ -41,24 +41,22 @@ function hide(Id){
 
 // Function that will count from 60 to zero and stop the game
 function startCountdown(){
-    
+
     //start Interval
     time = setInterval(function(){
-        
+
         timeremaining -= 1;  // Reduce time every second
 
         document.getElementById("timeremaining").innerHTML = timeremaining; // Update time on the page
-        
+
        // If the remaining time is 0 second show the gameover
         if (timeremaining == 0){
 
             clearInterval(time); // Clear time Interval
-            
-            hide("time");   // Hide time reamining 
+
+            hide("time");   // Hide time reamining
 
             scorebox(); // Show gameover box and score
-
-            play = true;
         }
     }, 1000);
 }
@@ -82,7 +80,7 @@ for (let i = 1; i < 5; i++){
         if (play == false){
             // If clicked is correct
             if (i == correctbox){
-                    
+
                 score += 1; // Increase score
                 document.getElementById("score-value").innerHTML = score;
                 show("correct"); // Show correct
@@ -108,14 +106,14 @@ function getQuestions(){
     // Generate two random numbers b/w 0 and 10
     let x = 1 + Math.floor(9 * Math.random());
     let y = 1 + Math.floor(9 * Math.random());
-    
+
     // Store the correct answer
     correct = x * y;
 
     // array store all options
     var answers = [correct]
 
-    // Generate random number b/w 0 and 5 
+    // Generate random number b/w 0 and 5
     correctbox = 1 + Math.floor(3 * Math.random());
 
     //show the question
@@ -127,22 +125,21 @@ function getQuestions(){
     // Generate 3 incorrect options
     for (let i = 1; i < 5; i++){
 
-        // If box is not correct option box 
+        // If box is not correct option box
         if (i != correctbox){
             // Generate numbers
             do{
-            
+
                 wronganswer = (1 + Math.floor(9 * Math.random())) * (1 + Math.floor(9 * Math.random())); // Multiply to one digit numbers
             }
             while (answers.indexOf(wronganswer) >= 0) // If it is already generated or correct answer generate again
 
             // Add the generated number in array so that it can be checked for other options
             answers.push(wronganswer);
-            
-            // Show other options 
+
+            // Show other options
             document.getElementById("box" + i).innerHTML = wronganswer;
         }
     }
 
 }
-
