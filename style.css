@@ -7,10 +7,11 @@ html{
     width: 800px;
     height: 580px;
     position: relative;
-    margin: 160px 550px;   
+    margin: 160px 550px;
     box-shadow: 4px 4px #009de4;
-    padding: 20px 15px;   
+    padding: 20px 15px;
     border-radius: 15px;
+    align-items: center;
 }
 
 #score{
@@ -19,7 +20,7 @@ html{
     font-size: 20px;
     position: absolute;
     box-shadow: 0px 3px lightyellow;
-    left: 700px;  
+    left: 700px;
     top: 30px;
 }
 
@@ -93,18 +94,18 @@ html{
     position: relative;
     transform: all 0.3s;
 }
-  
+
 #box4{
     margin-right: 0px;
 }
 
-.box:hover, #startreset:hover{
+.box:hover, #startreset:hover, .level:hover{
     background-color: purple;
     box-shadow: 0px 4px #009de4;
     color: white;
 }
 
-.box:active, #startreset:active{
+.box:active, #startreset:active, .level:active{
     box-shadow: 0px 0px #009de4;
     top: 4px;
 }
@@ -142,7 +143,7 @@ html{
     font-size: 17px;
     cursor: pointer;
     position: relative;
-    transform: all 0.3s;  
+    transform: all 0.3s;
     display: none;
 }
 
@@ -156,9 +157,40 @@ html{
     top: 150px;
     left: 58px;
     color: white;
-    position: absolute; 
+    position: absolute;
     text-align: center;
     text-transform: uppercase;
-    border: ridge skyblue; 
+    border: ridge skyblue;
     display: none;
+}
+
+#difficulty{
+  height: 0px;
+  width: 300px;
+  margin: 0px 100px;
+  top: -480px;
+  left: 40px;
+  position: relative;
+  display: none;
+}
+
+.level{
+  height: 150px;
+  width: 500px;
+  background-color: lightgreen;
+  color: white;
+  font-size: 55px;
+  margin-bottom: 25px;
+  position: relative;
+  font-family: cursive, sans-serif;
+  padding: 5px;
+  align-items: center;
+  border-radius: 15px;
+  line-height: 150px;
+  text-align: center;
+}
+
+#level1{
+  align-items: center;
+  text-indent: -100px;
 }
