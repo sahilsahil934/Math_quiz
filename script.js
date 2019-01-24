@@ -68,8 +68,6 @@ function startCountdown(){
             hide("time");   // Hide time reamining
 
             scorebox(); // Show gameover box and score
-
-            play = true;
         }
     }, 1000);
 }
