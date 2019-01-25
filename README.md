@@ -6,4 +6,4 @@
 
 
 
-[Click here to Play](https://github.com/iamsahil1910/Math_quiz/)
+[Click here to Play](https://sahilverma.me/Math_quiz/)
