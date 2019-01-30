@@ -128,16 +128,24 @@ for (let j = 1; j < 4; j++){
 // Function to generate questions and handling to score all the main logic
 function getQuestions(value){
 
+    // Geting random number to choose which type of question should be asked
+    operator = correctbox = 1 + Math.floor(3 * Math.random());
+
+    // If question is of addition or subtraction increase the difficulty
+    if (operator === 1 || operator === 3)
+    {
+        value = value * 5;
+    }
+
     // Generate two random numbers b/w 0 and 10
     let x = 1 + Math.floor((value * 9) * Math.random());
     let y = 1 + Math.floor((value * 9) * Math.random());
-
-    operator =  correctbox = 1 + Math.floor(3 * Math.random());
 
     switch(operator){
       case 1:
           correct = x + y;
           symbol = ' + '
+          value = 3 * value;
           break;
       case 2:
           correct = x * y;
@@ -146,6 +154,7 @@ function getQuestions(value){
       case 3:
           correct = x - y;
           symbol = ' - ';
+            value = 3 * value;
           break;
       default:
           getQuestions(level);
@@ -181,7 +190,7 @@ function getQuestions(value){
                   wronganswer = (1 + Math.floor((value * 9) * Math.random())) - (1 + Math.floor((value * 9) * Math.random())); // Difference to one digit numbers
                 }
             }
-            while (answers.indexOf(wronganswer) >= 0) // If it is already generated or correct answer generate again
+            while (answers.indexOf(wronganswer) >= 0 || ((wronganswer - correct > 10) || (correct - wronganswer > 10))) // If it is already generated or correct answer generate again
 
             // Add the generated number in array so that it can be checked for other options
             answers.push(wronganswer);
